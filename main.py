@@ -18,8 +18,6 @@ async def root():
 
 @app.get("/player/{player_id}")
 async def get_player_career_stats(player_id: str):
-    # Fetch player career stats using nba_api
     career_stats = playercareerstats.PlayerCareerStats(player_id=player_id)
-    # Convert the data to a dictionary
     data = career_stats.get_dict()
     return data
